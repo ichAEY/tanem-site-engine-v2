@@ -1,0 +1,68 @@
+---
+import "../styles/fonts.css";
+import "../styles/global.css";
+import { assetPath, inlineJson, phoneContact, site } from "../lib/site";
+
+const canonical = site.deployment.customDomain
+  ? `https://${site.deployment.customDomain}/`
+  : undefined;
+const socialImage = canonical
+  ? new URL(assetPath(site.hero.portrait.src), canonical).href
+  : assetPath(site.hero.portrait.src);
+const favicon = site.brand.favicon || site.brand.logo;
+const metrikaId = site.analytics.yandexMetrikaId;
+const metrikaScript = metrikaId
+  ? `(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t);a=e.getElementsByTagName(t)[0];k.async=1;k.src=r;a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(${Number(metrikaId)},"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});`
+  : undefined;
+const structuredData = inlineJson({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.master.name,
+  jobTitle: site.master.profession,
+  description: site.seo.description,
+  image: socialImage,
+  url: canonical,
+  telephone: phoneContact()?.value,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: site.location.city,
+    streetAddress: site.location.address,
+  },
+  worksFor: {
+    "@type": "Organization",
+    name: site.brand.name,
+  },
+  sameAs: site.contacts
+    .filter((contact) => ["telegram", "vk", "max", "map"].includes(contact.type))
+    .map((contact) => contact.url),
+});
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f6f1eb" />
+    <meta name="description" content={site.seo.description} />
+    <meta name="keywords" content={site.seo.keywords.join(", ")} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={site.seo.locale} />
+    <meta property="og:title" content={site.seo.title} />
+    <meta property="og:description" content={site.seo.description} />
+    <meta property="og:image" content={socialImage} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    {favicon && <link rel="icon" href={assetPath(favicon.src)} />}
+    <script type="application/ld+json" set:html={structuredData} />
+    {metrikaScript && <script is:inline set:html={metrikaScript} />}
+    <title>{site.seo.title}</title>
+  </head>
+  <body data-specialty={site.specialty}>
+    <slot />
+    {metrikaId && (
+      <noscript><div><img src={`https://mc.yandex.ru/watch/${metrikaId}`} style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    )}
+    <script src="../scripts/site.ts"></script>
+  </body>
+</html>

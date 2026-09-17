@@ -1,0 +1,122 @@
+---
+import Icon from "./Icon.astro";
+import { primaryContact, serviceWord, site } from "../lib/site";
+
+const fallbackBooking = site.bookingUrl || primaryContact().url;
+const categories = site.services.categories;
+const showAll = site.specialty === "hair" && categories.length > 2;
+const totalServices = categories.reduce((total, category) => total + category.services.length, 0);
+let globalServiceIndex = 0;
+---
+
+<section class="section services" id="services" aria-labelledby="services-title">
+  <div class="shell services-layout">
+    <div class="section-heading services-heading">
+      <div>
+        <p class="eyebrow">Услуги и цены</p>
+        <h2 id="services-title">Выберите<br /><em>услугу</em></h2>
+      </div>
+      <p>{site.services.intro}</p>
+    </div>
+
+    {categories.length > 1 && (
+      <div class="service-tabs-wrap" data-tabs-wrap>
+        <div class="service-tabs" role="tablist" aria-label="Категории услуг" data-tabs>
+          {showAll && <button type="button" role="tab" aria-selected="true" tabindex="0" data-category-tab="all">Все</button>}
+          {categories.map((category, index) => (
+            <button
+              id={`tab-${category.id}`}
+              type="button"
+              role="tab"
+              aria-selected={!showAll && index === 0 ? "true" : "false"}
+              aria-controls={`panel-${category.id}`}
+              tabindex={!showAll && index === 0 ? "0" : "-1"}
+              data-category-tab={category.id}
+            >
+              {category.label}
+            </button>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <div id="service-groups" class="service-groups" data-service-groups data-active-category={showAll ? "all" : categories[0].id}>
+      {categories.map((category) => (
+        <section
+          id={`panel-${category.id}`}
+          class="service-group"
+          role={categories.length > 1 ? "tabpanel" : undefined}
+          data-category-group={category.id}
+          aria-labelledby={categories.length > 1 && !showAll ? `tab-${category.id}` : undefined}
+          aria-label={showAll || categories.length === 1 ? category.label : undefined}
+        >
+          {showAll && <h3 id={`category-${category.id}`}>{category.label}</h3>}
+          <div class="service-list" id={`service-list-${category.id}`}>
+            {category.services.map((service, index) => {
+              const booking = service.bookingUrl || fallbackBooking;
+              const allIndex = globalServiceIndex;
+              globalServiceIndex += 1;
+              return (
+                <article
+                  class="service-card"
+                  data-service-card
+                  data-extra-service={!showAll && index >= 5 ? "true" : undefined}
+                  data-extra-all-mobile={showAll && allIndex >= 6 ? "true" : undefined}
+                  data-extra-all-desktop={showAll && allIndex >= 9 ? "true" : undefined}
+                >
+                  <div class="service-main">
+                    <h4>{service.name}</h4>
+                    {service.description && <p>{service.description}</p>}
+                  </div>
+
+                  {service.price.type === "variants" ? (
+                    <div class="service-variants">
+                      {service.price.variants.map((variant) => (
+                        <div>
+                          <span>{variant.label}{variant.duration && <small>{variant.duration}</small>}</span>
+                          <b>{variant.value}</b>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div class="service-meta">
+                      {service.duration && <span><Icon name="clock" size={16} />{service.duration}</span>}
+                      <b>{service.price.type === "from" ? `от ${service.price.value}` : service.price.value}</b>
+                    </div>
+                  )}
+
+                  {booking && <a class="service-booking" href={booking} target={booking.startsWith("tel:") ? undefined : "_blank"} rel={booking.startsWith("tel:") ? undefined : "noopener"} aria-label={`Записаться: ${service.name}`}>Записаться <span>→</span></a>}
+                </article>
+              );
+            })}
+          </div>
+          {!showAll && category.services.length > 5 && (
+            <button
+              class="show-more"
+              type="button"
+              aria-expanded="false"
+              aria-controls={`service-list-${category.id}`}
+              data-show-more
+              data-collapsed-label={`Показать ещё ${category.services.length - 5} ${serviceWord(category.services.length - 5)}`}
+            >
+              Показать ещё {category.services.length - 5} {serviceWord(category.services.length - 5)}
+            </button>
+          )}
+        </section>
+      ))}
+    </div>
+
+    {showAll && totalServices > 6 && (
+      <button
+        class="show-more global-show-more"
+        type="button"
+        aria-expanded="false"
+        aria-controls="service-groups"
+        data-show-all-services
+        data-desktop-needed={totalServices > 9 ? "true" : undefined}
+      >
+        Открыть все услуги
+      </button>
+    )}
+  </div>
+</section>

@@ -1,0 +1,53 @@
+---
+import Icon from "./Icon.astro";
+import { assetPath, phoneContact, site } from "../lib/site";
+
+const phone = phoneContact();
+const hasPromotions = site.promotions.length > 0;
+const hasReviews = site.reviews.length > 0;
+---
+
+<header class="site-header" id="top">
+  <div class="shell header-inner">
+    <a class="brand" href="#top" aria-label={`${site.brand.name}, наверх`}>
+      {site.brand.logo ? (
+        <img src={assetPath(site.brand.logo.src)} alt={site.brand.logo.alt} width="124" height="46" />
+      ) : (
+        <>
+          <span class="brand-name">{site.brand.name}</span>
+          {site.brand.subtitle && <span class="brand-subtitle">{site.brand.subtitle}</span>}
+        </>
+      )}
+    </a>
+
+    <nav class="desktop-nav" aria-label="Основная навигация">
+      <a href="#services">Услуги и цены</a>
+      {hasPromotions && <a href="#promotions">Акции</a>}
+      <a href="#about">О мастере</a>
+      {hasReviews && <a href="#reviews">Отзывы</a>}
+      <a href="#visit">Визит и запись</a>
+    </nav>
+
+    {phone && (
+      <a class="header-phone" href={phone.url}>
+        <Icon name="phone" size={22} />
+        <span><small>Позвонить</small>{phone.value || phone.label}</span>
+      </a>
+    )}
+
+    <button class="menu-button" type="button" aria-label="Открыть меню" aria-expanded="false" data-menu-button>
+      <Icon name="menu" size={24} />
+    </button>
+  </div>
+
+  <div class="mobile-menu" data-mobile-menu hidden>
+    <nav class="shell" aria-label="Мобильная навигация">
+      <a href="#services">Услуги и цены</a>
+      {hasPromotions && <a href="#promotions">Акции</a>}
+      <a href="#about">О мастере</a>
+      {hasReviews && <a href="#reviews">Отзывы</a>}
+      <a href="#visit">Визит и запись</a>
+      {phone && <a href={phone.url}>Позвонить: {phone.value || phone.label}</a>}
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,54 @@
+---
+import Icon from "./Icon.astro";
+import { inlineJson, primaryContact, site } from "../lib/site";
+
+const mainAction = primaryContact();
+const hoursJson = inlineJson({ timezone: site.location.timezone, hours: site.location.weeklyHours });
+---
+
+<section class="section visit" id="visit" aria-labelledby="visit-title">
+  <div class="shell">
+    <div class="visit-top">
+      <div>
+        <p class="eyebrow">Запись и связь</p>
+        <p class="open-status" data-open-status>{site.location.scheduleLabel}</p>
+        <script type="application/json" data-hours set:html={hoursJson} />
+      </div>
+      <h2 id="visit-title">Запишитесь онлайн<br /><em>или свяжитесь удобным способом</em></h2>
+    </div>
+
+    <div class="visit-grid">
+      <div class="visit-card location-card">
+        <span class="contact-icon"><Icon name="map" size={23} /></span>
+        <small>{site.location.city}</small>
+        <h3>{site.location.mapCardAddress}</h3>
+        <p>{site.location.scheduleLabel}</p>
+        {site.contacts.find((contact) => contact.type === "map") && (
+          <a class="text-link" href={site.contacts.find((contact) => contact.type === "map")!.url} target="_blank" rel="noopener">Открыть карту <Icon name="arrow" size={17} /></a>
+        )}
+      </div>
+
+      <div class="contact-grid">
+        {site.contacts.filter((contact) => contact.type !== "map").map((contact) => (
+          <a class={`visit-card contact-card ${contact.primary ? "primary-contact" : ""}`} href={contact.url} target={contact.type === "phone" ? undefined : "_blank"} rel={contact.type === "phone" ? undefined : "noopener"}>
+            <span class="contact-icon"><Icon name={contact.type} size={22} /></span>
+            <small>{contact.type === "phone" ? "Телефон" : "Связаться"}</small>
+            <strong>{contact.label}</strong>
+            {contact.value && <span>{contact.value}</span>}
+            <i aria-hidden="true">→</i>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    {site.location.mapEmbedUrl && (
+      <div class="map-frame">
+        <iframe src={site.location.mapEmbedUrl} title={`Карта: ${site.location.address}`} loading="lazy"></iframe>
+      </div>
+    )}
+
+    <a class="button button-light visit-main-action" href={mainAction.url} target={mainAction.type === "phone" ? undefined : "_blank"} rel={mainAction.type === "phone" ? undefined : "noopener"}>
+      {mainAction.label}<Icon name="arrow" size={17} />
+    </a>
+  </div>
+</section>

@@ -1,0 +1,449 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ichAEY/tanem-site-engine-v2/v0.1.0/site.schema.json",
+  "version": 2,
+  "layout": "master",
+  "specialty": "nails",
+  "brand": {
+    "name": "ClayTone",
+    "subtitle": "Nail studio",
+    "monogram": "C",
+    "favicon": {
+      "src": "assets/examples/nonna/favicon.webp",
+      "alt": ""
+    }
+  },
+  "master": {
+    "name": "Нонна",
+    "profession": "мастер ногтевого сервиса",
+    "locationLabel": "Москва · м. Спортивная",
+    "heroTitle": "Нонна — мастер",
+    "heroAccent": "ногтевого сервиса",
+    "heroCopy": "Маникюр, педикюр и наращивание с аккуратной обработкой, стерильными инструментами и вниманием к форме.",
+    "experience": "8",
+    "experienceLabel": "лет опыта",
+    "aboutTitle": "Нонна — мастер ClayTone",
+    "aboutLead": "Я Нонна — дипломированный мастер маникюра и педикюра.",
+    "aboutParagraphs": [
+      "Более восьми лет я работаю с разной длиной и формой ногтей: выполняю аккуратный маникюр, педикюр, укрепление и наращивание.",
+      "Перед процедурой мы обсуждаем желаемый результат, подбираем форму и покрытие. Инструменты проходят обязательную стерилизацию, а работа строится без спешки и лишних процедур."
+    ],
+    "skills": [
+      "Маникюр и педикюр",
+      "Наращивание и коррекция",
+      "Стерильные инструменты"
+    ]
+  },
+  "location": {
+    "city": "Москва",
+    "address": "Москва, Кооперативная улица, 4, корп. 9",
+    "mapCardAddress": "Кооперативная улица, 4, корп. 9",
+    "scheduleLabel": "Ежедневно 10:00–22:00",
+    "timezone": "Europe/Moscow",
+    "weeklyHours": [
+      { "day": 0, "open": "10:00", "close": "22:00" },
+      { "day": 1, "open": "10:00", "close": "22:00" },
+      { "day": 2, "open": "10:00", "close": "22:00" },
+      { "day": 3, "open": "10:00", "close": "22:00" },
+      { "day": 4, "open": "10:00", "close": "22:00" },
+      { "day": 5, "open": "10:00", "close": "22:00" },
+      { "day": 6, "open": "10:00", "close": "22:00" }
+    ],
+    "mapEmbedUrl": "https://yandex.ru/map-widget/v1/?ll=37.567419%2C55.724018&mode=search&oid=132613437697&ol=biz&z=16"
+  },
+  "contacts": [
+    {
+      "type": "phone",
+      "label": "Позвонить",
+      "value": "+7 905 414-10-88",
+      "url": "tel:+79054141088"
+    },
+    {
+      "type": "booking",
+      "label": "Записаться онлайн",
+      "url": "https://n962951.yclients.com/company/894717/personal/select-time",
+      "primary": true
+    },
+    {
+      "type": "telegram",
+      "label": "Написать в Telegram",
+      "url": "https://t.me/nonnails"
+    },
+    {
+      "type": "telegram",
+      "label": "Telegram-канал",
+      "url": "https://t.me/nonnnails"
+    },
+    {
+      "type": "map",
+      "label": "Открыть Яндекс Карты",
+      "url": "https://yandex.ru/maps/org/claytone/132613437697/?ll=37.567419%2C55.724018&z=16"
+    }
+  ],
+  "bookingUrl": "https://n962951.yclients.com/company/894717/personal/select-time",
+  "reputation": {
+    "rating": "5,0",
+    "reviewCount": "95",
+    "reviewsUrl": "https://yandex.ru/maps/org/claytone/132613437697/reviews/?ll=37.567420%2C55.724018&tab=reviews&z=17.08"
+  },
+  "hero": {
+    "portrait": {
+      "src": "assets/examples/nonna/nonna-portrait.webp",
+      "alt": "Нонна — мастер ногтевого сервиса"
+    },
+    "aboutPhoto": {
+      "src": "assets/examples/nonna/nonna-about.webp",
+      "alt": "Нонна — мастер ногтевого сервиса"
+    },
+    "mobileVisual": {
+      "src": "assets/examples/nonna/polish-shelves-final.webp",
+      "alt": ""
+    },
+    "thirdStat": "reviews"
+  },
+  "portfolio": {
+    "title": "До / после",
+    "lead": "Реальные примеры обработки, формы и покрытия",
+    "gallery": [
+      {
+        "src": "assets/examples/nonna/photo1.webp",
+        "alt": "Работа ClayTone — новое фото 1"
+      },
+      {
+        "src": "assets/examples/nonna/photo2.webp",
+        "alt": "Работа ClayTone — новое фото 2"
+      },
+      {
+        "src": "assets/examples/nonna/photo3.webp",
+        "alt": "Работа ClayTone — новое фото 3"
+      },
+      {
+        "src": "assets/examples/nonna/photo4.webp",
+        "alt": "Работа ClayTone — новое фото 4"
+      },
+      {
+        "src": "assets/examples/nonna/photo5.webp",
+        "alt": "Работа ClayTone — новое фото 5"
+      },
+      {
+        "src": "assets/examples/nonna/work-06.webp",
+        "alt": "Работа Нонны — маникюр винного оттенка"
+      },
+      {
+        "src": "assets/examples/nonna/work-07.webp",
+        "alt": "Работа Нонны — графичный тёмный дизайн"
+      },
+      {
+        "src": "assets/examples/nonna/mobile-work-french.webp",
+        "alt": "Работа Нонны — чистый френч на мягком квадрате"
+      },
+      {
+        "src": "assets/examples/nonna/mobile-work-pearl.webp",
+        "alt": "Работа Нонны — жемчужное покрытие"
+      },
+      {
+        "src": "assets/examples/nonna/mobile-work-wine.webp",
+        "alt": "Работа Нонны — глубокий винный оттенок"
+      },
+      {
+        "src": "assets/examples/nonna/portfolio-french.webp",
+        "alt": "Работа Нонны — тонкий молочный френч"
+      },
+      {
+        "src": "assets/examples/nonna/portfolio-pearl.webp",
+        "alt": "Работа Нонны — перламутровый нюд"
+      },
+      {
+        "src": "assets/examples/nonna/photo6.webp",
+        "alt": "Работа ClayTone — новое фото 6"
+      }
+    ],
+    "beforeAfter": []
+  },
+  "services": {
+    "intro": "Актуальная стоимость и продолжительность указаны для каждой процедуры. Запись откроется в новой вкладке.",
+    "categories": [
+      {
+        "id": "manicure",
+        "label": "Маникюр",
+        "services": [
+          {
+            "name": "Комбо — маникюр + педикюр",
+            "description": "Две процедуры в одной записи. Экономия — 750 ₽.",
+            "duration": "3 ч",
+            "price": {
+              "type": "fixed",
+              "value": "6 800 ₽"
+            },
+            "bookingUrl": "https://n962951.yclients.com/company/894717/personal/select-services?o=m5439528s26277760"
+          },
+          {
+            "name": "Наращивание ногтей",
+            "description": "Снятие, маникюр, наращивание, покрытие гель-лаком и дизайн.",
+            "duration": "2 ч",
+            "price": {
+              "type": "fixed",
+              "value": "5 500 ₽"
+            },
+            "bookingUrl": "https://n962951.yclients.com/company/894717/personal/select-services?o=m5439528s19345530"
+          },
+          {
+            "name": "Коррекция наращённых ногтей",
+            "description": "Снятие, маникюр, укрепление гелем, донаращивание и покрытие.",
+            "duration": "2 ч",
+            "price": {
+              "type": "fixed",
+              "value": "4 700 ₽"
+            },
+            "bookingUrl": "https://n962951.yclients.com/company/894717/personal/select-services?o=m5439528s19345536"
+          },
+          {
+            "name": "Комплекс S",
+            "description": "Маникюр и покрытие гель-лаком без снятия старого покрытия.",
+            "duration": "1 ч 15 мин",
+            "price": {
+              "type": "fixed",
+              "value": "3 000 ₽"
+            },
+            "bookingUrl": "https://n962951.yclients.com/company/894717/personal/select-services?o=m5439528s17329246"
+          },
+          {
+            "name": "Комплекс M",
+            "description": "Снятие, маникюр, покрытие, ремонт до двух ногтей и базовый дизайн.",
+            "duration": "1 ч 30 мин",
+            "price": {
+              "type": "fixed",
+              "value": "3 500 ₽"
+            },
+            "bookingUrl": "https://n962951.yclients.com/company/894717/personal/select-services?o=m5439528s17329251"
+          },
+          {
+            "name": "Комплекс L",
+            "description": "Снятие, маникюр, укрепление гелем, покрытие и дизайн.",
+            "duration": "2 ч",
+            "price": {
+              "type": "fixed",
+              "value": "4 500 ₽"
+            },
+            "bookingUrl": "https://n962951.yclients.com/company/894717/personal/select-services?o=m5439528s17329255"
+          },
+          {
+            "name": "Покрытие гель-лаком",
+            "description": "Покрытие гель-лаком без маникюра.",
+            "duration": "45 мин",
+            "price": {
+              "type": "fixed",
+              "value": "1 800 ₽"
+            },
+            "bookingUrl": "https://n962951.yclients.com/company/894717/personal/select-services?o=m5439528s13231053"
+          },
+          {
+            "name": "Маникюр комбинированный / аппаратный",
+            "description": "Аппаратная или комбинированная обработка кутикулы и форма ногтей.",
+            "duration": "1 ч",
+            "price": {
+              "type": "fixed",
+              "value": "1 800 ₽"
+            },
+            "bookingUrl": "https://n962951.yclients.com/company/894717/personal/select-services?o=m5439528s13230981"
+          },
+          {
+            "name": "Лак лечебный / цветной",
+            "description": "Лечебное или цветное покрытие ногтей лаком.",
+            "duration": "15 мин",
+            "price": {
+              "type": "fixed",
+              "value": "500 ₽"
+            },
+            "bookingUrl": "https://n962951.yclients.com/company/894717/personal/select-services?o=m5439528s20620785"
+          },
+          {
+            "name": "Японский маникюр",
+            "description": "Форма, обработка кутикулы и японская полировка для естественного блеска.",
+            "duration": "1 ч",
+            "price": {
+              "type": "fixed",
+              "value": "2 300 ₽"
+            },
+            "bookingUrl": "https://n962951.yclients.com/company/894717/personal/select-services?o=m5439528s16414211"
+          },
+          {
+            "name": "Дизайны",
+            "description": "Кошачий глаз, втирка, градиент, френч или ручная роспись.",
+            "duration": "от 5 мин",
+            "price": {
+              "type": "fixed",
+              "value": "100–500 ₽"
+            },
+            "bookingUrl": "https://n962951.yclients.com/company/894717/personal/select-services?o=m5439528s17350442"
+          },
+          {
+            "name": "Наращивание одного ногтя",
+            "description": "Восстановление длины и формы одного ногтя.",
+            "duration": "20 мин",
+            "price": {
+              "type": "fixed",
+              "value": "350 ₽"
+            },
+            "bookingUrl": "https://n962951.yclients.com/company/894717/personal/select-services?o=m5439528s13231069"
+          },
+          {
+            "name": "Ремонт ногтя",
+            "description": "Восстановление целостности и формы одного ногтя.",
+            "duration": "20 мин",
+            "price": {
+              "type": "fixed",
+              "value": "200–350 ₽"
+            },
+            "bookingUrl": "https://n962951.yclients.com/company/894717/personal/select-services?o=m5439528s17627677"
+          },
+          {
+            "name": "Холодный парафин для рук",
+            "description": "Интенсивное увлажнение и питание кожи рук.",
+            "duration": "15 мин",
+            "price": {
+              "type": "fixed",
+              "value": "500 ₽"
+            },
+            "bookingUrl": "https://n962951.yclients.com/company/894717/personal/select-services?o=m5439528s29517270"
+          }
+        ]
+      },
+      {
+        "id": "pedicure",
+        "label": "Педикюр",
+        "services": [
+          {
+            "name": "Комплекс педикюр",
+            "description": "Снятие, форма, обработка кутикулы и стоп, покрытие гель-лаком.",
+            "duration": "1 ч 30 мин",
+            "price": {
+              "type": "fixed",
+              "value": "4 050 ₽"
+            },
+            "bookingUrl": "https://n962951.yclients.com/company/894717/personal/select-services?o=m5439528s13231092"
+          },
+          {
+            "name": "Пальцы ног + гель-лак",
+            "description": "Форма, обработка кутикулы и покрытие. Стопы не обрабатываются.",
+            "duration": "1 ч",
+            "price": {
+              "type": "fixed",
+              "value": "3 500 ₽"
+            },
+            "bookingUrl": "https://n962951.yclients.com/company/894717/personal/select-services?o=m5439528s13231104"
+          },
+          {
+            "name": "Стопы и ногти без покрытия",
+            "description": "Полная обработка стоп и ногтей без покрытия гель-лаком.",
+            "duration": "1 ч",
+            "price": {
+              "type": "fixed",
+              "value": "3 000 ₽"
+            },
+            "bookingUrl": "https://n962951.yclients.com/company/894717/personal/select-services?o=m5439528s13231102"
+          },
+          {
+            "name": "Обработка пальцев ног",
+            "description": "Аппаратная или комбинированная обработка пальцев без обработки стоп.",
+            "duration": "1 ч",
+            "price": {
+              "type": "fixed",
+              "value": "1 800 ₽"
+            },
+            "bookingUrl": "https://n962951.yclients.com/company/894717/personal/select-services?o=m5439528s13231109"
+          },
+          {
+            "name": "Полное снятие гель-лака",
+            "description": "Полное снятие без маникюра, с коррекцией формы ногтей.",
+            "duration": "30 мин",
+            "price": {
+              "type": "fixed",
+              "value": "700 ₽"
+            },
+            "bookingUrl": "https://n962951.yclients.com/company/894717/personal/select-services?o=m5439528s17350429"
+          },
+          {
+            "name": "Холодный парафин для ног",
+            "description": "Глубокое увлажнение, смягчение сухих и огрубевших участков стоп.",
+            "duration": "15 мин",
+            "price": {
+              "type": "fixed",
+              "value": "700 ₽"
+            },
+            "bookingUrl": "https://n962951.yclients.com/company/894717/personal/select-services?o=m5439528s29517282"
+          }
+        ]
+      }
+    ]
+  },
+  "promotions": [
+    {
+      "title": "−10% на первый визит",
+      "highlight": "Карта лояльности в подарок",
+      "description": "Скидка действует уже на первом посещении. С картой лояльности пятое посещение — −5%, десятое — −10%.",
+      "period": "до 31 августа 2026",
+      "image": {
+        "src": "assets/examples/nonna/photohh1.webp",
+        "alt": "Первая акция ClayTone"
+      }
+    },
+    {
+      "title": "Комбо: маникюр + педикюр",
+      "highlight": "Экономия 550 ₽",
+      "description": "Маникюр и педикюр с покрытием в одной записи. Экономия 550 ₽, продолжительность — от двух до трёх часов.",
+      "period": "до 31 декабря 2026",
+      "image": {
+        "src": "assets/examples/nonna/photohh2.webp",
+        "alt": "Вторая акция ClayTone"
+      }
+    }
+  ],
+  "reviews": [
+    {
+      "text": "Ногти выглядят очень эстетично и аккуратно.",
+      "author": "in-melik"
+    },
+    {
+      "text": "Мастер Нонна работает очень уверенно.",
+      "author": "Вероника Оганезова"
+    },
+    {
+      "text": "Больше трёх недель без единой отслойки.",
+      "author": "Anush Ануш"
+    },
+    {
+      "text": "Никаких порезов или дискомфорта.",
+      "author": "Johnny Cage"
+    }
+  ],
+  "amenities": [
+    {
+      "title": "Наращивание",
+      "text": "Наращивание и коррекция ногтей"
+    },
+    {
+      "title": "Wi‑Fi",
+      "text": "Доступен во время процедуры"
+    },
+    {
+      "title": "Парковка рядом",
+      "text": "Можно приехать на автомобиле"
+    }
+  ],
+  "seo": {
+    "title": "Нонна | ClayTone Nail Studio",
+    "description": "Маникюр и педикюр в Москве — ClayTone Nail Studio.",
+    "keywords": [
+      "маникюр Спортивная",
+      "педикюр Спортивная",
+      "мастер маникюра Москва",
+      "ClayTone",
+      "Нонна маникюр"
+    ],
+    "locale": "ru_RU"
+  },
+  "analytics": {
+    "yandexMetrikaId": "111558185"
+  },
+  "deployment": {}
+}

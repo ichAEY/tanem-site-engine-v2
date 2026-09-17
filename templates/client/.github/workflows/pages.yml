@@ -1,0 +1,73 @@
+name: Publish TANEM site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  TANEM_ENGINE_REF: v0.1.0
+  ASTRO_TELEMETRY_DISABLED: "1"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Client data
+        uses: actions/checkout@v4
+        with:
+          path: client
+
+      - name: Pinned TANEM engine
+        uses: actions/checkout@v4
+        with:
+          repository: ichAEY/tanem-site-engine-v2
+          ref: ${{ env.TANEM_ENGINE_REF }}
+          path: engine
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: engine/package-lock.json
+
+      - name: Assemble client source
+        run: |
+          cp client/site.json engine/site.json
+          mkdir -p engine/source-assets
+          cp -R client/assets engine/source-assets/assets
+
+      - run: npm ci
+        working-directory: engine
+
+      - name: Determine public path
+        run: node scripts/github-base.mjs >> "$GITHUB_ENV"
+        working-directory: engine
+
+      - run: npm run build
+        working-directory: engine
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: engine/dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

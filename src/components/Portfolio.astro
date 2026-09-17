@@ -1,0 +1,56 @@
+---
+import Icon from "./Icon.astro";
+import { assetPath, inlineJson, site } from "../lib/site";
+
+const gallery = site.portfolio.gallery;
+const featured = gallery.slice(0, 4);
+const beforeAfterImages = site.portfolio.beforeAfter.flatMap((pair) => [pair.before, pair.after]);
+const galleryItems = [...beforeAfterImages, ...gallery];
+const featuredOffset = beforeAfterImages.length;
+const galleryJson = inlineJson(galleryItems.map((image) => ({ src: assetPath(image.src), alt: image.alt })));
+---
+
+<section class="section portfolio" id="portfolio" aria-labelledby="portfolio-title">
+  <div class="shell">
+    <div class="section-heading portfolio-heading">
+      <div>
+        <p class="eyebrow">Портфолио</p>
+        <h2 id="portfolio-title">{site.portfolio.title}</h2>
+        {site.portfolio.lead && <p>{site.portfolio.lead}</p>}
+      </div>
+      <button class="text-link gallery-open" type="button" data-gallery-open="0">
+        Открыть галерею <Icon name="arrow" size={18} />
+      </button>
+    </div>
+
+    {site.portfolio.beforeAfter.length > 0 && (
+      <div class="before-after-grid">
+        {site.portfolio.beforeAfter.slice(0, 2).map((pair, index) => (
+          <button class="before-after" type="button" data-gallery-open={String(index * 2)} aria-label="Открыть пример до и после">
+            <span><img src={assetPath(pair.before.src)} alt={pair.before.alt} width="480" height="600" loading="lazy" /><b>До</b></span>
+            <span><img src={assetPath(pair.after.src)} alt={pair.after.alt} width="480" height="600" loading="lazy" /><b>После</b></span>
+          </button>
+        ))}
+      </div>
+    )}
+
+    <div class="portfolio-grid">
+      {featured.map((image, index) => (
+        <button class={`portfolio-tile tile-${index + 1}`} type="button" data-gallery-open={String(featuredOffset + index)} aria-label={`Открыть фото ${index + 1}`}>
+          <img src={assetPath(image.src)} alt={image.alt} width="620" height="760" loading={index > 1 ? "lazy" : "eager"} />
+        </button>
+      ))}
+    </div>
+  </div>
+
+  <dialog class="lightbox" data-gallery-dialog aria-label="Галерея работ">
+    <button class="lightbox-close" type="button" data-gallery-close aria-label="Закрыть галерею"><Icon name="close" size={28} /></button>
+    <button class="lightbox-nav lightbox-prev" type="button" data-gallery-prev aria-label="Предыдущее фото">←</button>
+    <figure>
+      <img data-gallery-image src={assetPath(galleryItems[0].src)} alt={galleryItems[0].alt} />
+      <figcaption><span data-gallery-caption>{galleryItems[0].alt}</span><small><span data-gallery-index>1</span> / {galleryItems.length}</small></figcaption>
+    </figure>
+    <button class="lightbox-nav lightbox-next" type="button" data-gallery-next aria-label="Следующее фото">→</button>
+    <script type="application/json" data-gallery-data set:html={galleryJson} />
+  </dialog>
+</section>

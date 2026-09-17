@@ -1,0 +1,29 @@
+---
+import { assetPath, site } from "../lib/site";
+---
+
+<section class="section about" id="about" aria-labelledby="about-title">
+  <div class="shell about-grid">
+    <div class="about-heading">
+      <p class="eyebrow">О мастере</p>
+      <h2 id="about-title">{site.master.aboutTitle}</h2>
+      <div class="about-mark" aria-hidden="true">
+        <span>{site.brand.monogram}</span>
+        <b>{site.master.experience}</b>
+        <small>{site.master.experienceLabel}</small>
+      </div>
+    </div>
+
+    <figure class="about-photo">
+      <img src={assetPath((site.hero.aboutPhoto || site.hero.portrait).src)} alt={(site.hero.aboutPhoto || site.hero.portrait).alt} width="700" height="860" loading="lazy" />
+    </figure>
+
+    <div class="about-copy">
+      <p class="about-lead">{site.master.aboutLead}</p>
+      {site.master.aboutParagraphs.map((paragraph) => <p>{paragraph}</p>)}
+      {site.master.skills.length > 0 && (
+        <ul>{site.master.skills.map((skill) => <li>{skill}</li>)}</ul>
+      )}
+    </div>
+  </div>
+</section>

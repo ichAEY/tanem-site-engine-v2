@@ -1,0 +1,46 @@
+---
+import Icon from "./Icon.astro";
+import { assetPath, primaryContact, serviceCount, serviceWord, site } from "../lib/site";
+
+const action = primaryContact();
+const thirdValue = site.hero.thirdStat === "reviews"
+  ? site.reputation?.reviewCount || serviceCount
+  : serviceCount;
+const thirdLabel = site.hero.thirdStat === "reviews" ? "оценок" : serviceWord(Number(thirdValue));
+---
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="shell hero-grid">
+    <div class="hero-content">
+      <p class="eyebrow">{site.master.locationLabel}</p>
+      <h1 id="hero-title">
+        <span>{site.master.heroTitle}</span>
+        <em>{site.master.heroAccent}</em>
+      </h1>
+      <p class="hero-copy">{site.master.heroCopy}</p>
+
+      {site.hero.mobileVisual && (
+        <div class={`mobile-specialty-visual visual-${site.specialty}`} aria-hidden="true">
+          <img src={assetPath(site.hero.mobileVisual.src)} alt="" width="620" height="380" fetchpriority="high" />
+        </div>
+      )}
+
+      <div class="hero-actions">
+        <a class="button button-primary" href={action.url} target={action.type === "phone" ? undefined : "_blank"} rel={action.type === "phone" ? undefined : "noopener"}>
+          {action.label}<Icon name="arrow" size={17} />
+        </a>
+        <a class="text-link" href="#portfolio">Смотреть работы <span aria-hidden="true">↓</span></a>
+      </div>
+
+      <dl class="hero-stats">
+        <div><dt>{site.master.experience}</dt><dd>{site.master.experienceLabel}</dd></div>
+        <div><dt>{site.reputation?.rating || "—"}{site.reputation && <sup>★</sup>}</dt><dd>рейтинг</dd></div>
+        <div><dt>{thirdValue}</dt><dd>{thirdLabel}</dd></div>
+      </dl>
+    </div>
+
+    <figure class="hero-portrait">
+      <img src={assetPath(site.hero.portrait.src)} alt={site.hero.portrait.alt} width="840" height="1040" fetchpriority="high" />
+    </figure>
+  </div>
+</section>

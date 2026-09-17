@@ -1,0 +1,11 @@
+---
+import { site } from "../lib/site";
+---
+
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <div><strong>{site.brand.name}</strong>{site.brand.subtitle && <span>{site.brand.subtitle}</span>}</div>
+    <p>{site.master.profession} · {site.location.city}</p>
+    <a href="https://tanem.ru" target="_blank" rel="noopener"><b>T</b> Создано в TANEM.ru</a>
+  </div>
+</footer>

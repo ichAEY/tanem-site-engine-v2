@@ -1,0 +1,515 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ichAEY/tanem-site-engine-v2/v0.1.0/site.schema.json",
+  "version": 2,
+  "layout": "master",
+  "specialty": "nails",
+  "brand": {
+    "name": "A. S. NAILS",
+    "subtitle": "Nail studio",
+    "monogram": "A",
+    "logo": {
+      "src": "assets/examples/tahmina/logo.webp",
+      "alt": "A. S. NAILS"
+    }
+  },
+  "master": {
+    "name": "Тахмина",
+    "profession": "мастер маникюра, педикюра и подологии",
+    "locationLabel": "Москва · м. Молодёжная",
+    "heroTitle": "Тахмина — мастер",
+    "heroAccent": "маникюра, педикюра и подологии",
+    "heroCopy": "Маникюр, педикюр и подология с аккуратной обработкой, вниманием к состоянию ногтей и индивидуальным подходом.",
+    "experience": "3+",
+    "experienceLabel": "лет опыта",
+    "aboutTitle": "Тахмина — мастер A. S. NAILS",
+    "aboutLead": "Я Тахмина — мастер маникюра, педикюра и подологии.",
+    "aboutParagraphs": [
+      "Работаю с маникюром, педикюром, наращиванием и сложными случаями ногтей и стоп. Клиенты отдельно отмечают аккуратность, стойкость покрытия и внимательное отношение.",
+      "Перед процедурой обсуждаем желаемый результат и подбираем подходящий формат ухода. Также провожу индивидуальные занятия и обучение мастеров ногтевого сервиса."
+    ],
+    "skills": [
+      "Маникюр и педикюр",
+      "Подология",
+      "Индивидуальное обучение"
+    ]
+  },
+  "location": {
+    "city": "Москва",
+    "address": "Москва, Оршанская улица, 5, 3 этаж, кабинет 317",
+    "mapCardAddress": "Оршанская улица, 5, кабинет 317",
+    "scheduleLabel": "Пн–пт 09:00–21:00 · сб 10:00–21:00 · вс 11:00–21:00",
+    "timezone": "Europe/Moscow",
+    "weeklyHours": [
+      { "day": 0, "open": "11:00", "close": "21:00" },
+      { "day": 1, "open": "09:00", "close": "21:00" },
+      { "day": 2, "open": "09:00", "close": "21:00" },
+      { "day": 3, "open": "09:00", "close": "21:00" },
+      { "day": 4, "open": "09:00", "close": "21:00" },
+      { "day": 5, "open": "09:00", "close": "21:00" },
+      { "day": 6, "open": "10:00", "close": "21:00" }
+    ],
+    "mapEmbedUrl": "https://yandex.ru/map-widget/v1/?ll=37.408390%2C55.740568&mode=search&oid=46030914484&ol=biz&z=17"
+  },
+  "contacts": [
+    {
+      "type": "phone",
+      "label": "Позвонить",
+      "value": "+7 909 096-72-22",
+      "url": "tel:+79090967222"
+    },
+    {
+      "type": "booking",
+      "label": "Записаться онлайн",
+      "url": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk",
+      "primary": true
+    },
+    {
+      "type": "telegram",
+      "label": "Написать в Telegram",
+      "url": "https://t.me/+79090967222?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F."
+    },
+    {
+      "type": "telegram",
+      "label": "Telegram-канал",
+      "url": "https://t.me/A_S_Nails22kuntsevo"
+    },
+    {
+      "type": "map",
+      "label": "Открыть Яндекс Карты",
+      "url": "https://yandex.com/maps/org/nogtevaya_studiya/46030914484/?ll=37.408390%2C55.740568&z=17"
+    }
+  ],
+  "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk",
+  "reputation": {
+    "rating": "4,9",
+    "reviewCount": "38",
+    "reviewsUrl": "https://yandex.com/maps/org/nogtevaya_studiya/46030914484/reviews/"
+  },
+  "hero": {
+    "portrait": {
+      "src": "assets/examples/tahmina/master.webp",
+      "alt": "Тахмина — мастер маникюра, педикюра и подологии"
+    },
+    "aboutPhoto": {
+      "src": "assets/examples/tahmina/master.webp",
+      "alt": "Тахмина — мастер маникюра, педикюра и подологии"
+    },
+    "mobileVisual": {
+      "src": "assets/examples/tahmina/polish-shelves-final.webp",
+      "alt": ""
+    },
+    "thirdStat": "reviews"
+  },
+  "portfolio": {
+    "title": "До / после",
+    "lead": "Реальные примеры обработки, формы и покрытия",
+    "gallery": [
+      {
+        "src": "assets/examples/tahmina/portfolio/01.webp",
+        "alt": "Работа Тахмины — фото 1"
+      },
+      {
+        "src": "assets/examples/tahmina/portfolio/02.webp",
+        "alt": "Работа Тахмины — фото 2"
+      },
+      {
+        "src": "assets/examples/tahmina/portfolio/03.webp",
+        "alt": "Работа Тахмины — фото 3"
+      },
+      {
+        "src": "assets/examples/tahmina/portfolio/04.webp",
+        "alt": "Работа Тахмины — фото 4"
+      },
+      {
+        "src": "assets/examples/tahmina/portfolio/05.webp",
+        "alt": "Работа Тахмины — фото 5"
+      },
+      {
+        "src": "assets/examples/tahmina/portfolio/06.webp",
+        "alt": "Работа Тахмины — фото 6"
+      },
+      {
+        "src": "assets/examples/tahmina/portfolio/07.webp",
+        "alt": "Работа Тахмины — фото 7"
+      },
+      {
+        "src": "assets/examples/tahmina/portfolio/08.webp",
+        "alt": "Работа Тахмины — фото 8"
+      },
+      {
+        "src": "assets/examples/tahmina/portfolio/09.webp",
+        "alt": "Работа Тахмины — фото 9"
+      },
+      {
+        "src": "assets/examples/tahmina/portfolio/10.webp",
+        "alt": "Работа Тахмины — фото 10"
+      },
+      {
+        "src": "assets/examples/tahmina/portfolio/11.webp",
+        "alt": "Работа Тахмины — фото 11"
+      },
+      {
+        "src": "assets/examples/tahmina/portfolio/12.webp",
+        "alt": "Работа Тахмины — фото 12"
+      },
+      {
+        "src": "assets/examples/tahmina/portfolio/13.webp",
+        "alt": "Работа Тахмины — фото 13"
+      }
+    ],
+    "beforeAfter": []
+  },
+  "services": {
+    "intro": "Актуальная стоимость и продолжительность указаны для каждой процедуры. Запись откроется в новой вкладке.",
+    "categories": [
+      {
+        "id": "manicure",
+        "label": "Маникюр",
+        "services": [
+          {
+            "name": "Luxe Shine + маникюр",
+            "duration": "1 ч",
+            "price": {
+              "type": "from",
+              "value": "2 600 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Дизайн 1-го ногтя",
+            "duration": "5 мин",
+            "price": {
+              "type": "from",
+              "value": "150 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Коррекция наращенных ногтей",
+            "duration": "2 ч",
+            "price": {
+              "type": "from",
+              "value": "4 500 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Маникюр без покрытия",
+            "duration": "1 ч",
+            "price": {
+              "type": "from",
+              "value": "1 800 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Маникюр всё включено (выравнивание, укрепление гелем)",
+            "duration": "1 ч 30 мин",
+            "price": {
+              "type": "from",
+              "value": "3 500 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Маникюр детский",
+            "duration": "30 мин",
+            "price": {
+              "type": "from",
+              "value": "1 000 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Маникюр мужской",
+            "duration": "1 ч",
+            "price": {
+              "type": "from",
+              "value": "2 000 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Наращивание гель/акрил",
+            "duration": "2 ч 30 мин",
+            "price": {
+              "type": "from",
+              "value": "5 500 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Покрытие ногтей лаком (без маникюра)",
+            "duration": "20 мин",
+            "price": {
+              "type": "from",
+              "value": "1 200 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Ремонт 1-го ногтя",
+            "duration": "10 мин",
+            "price": {
+              "type": "from",
+              "value": "200 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Снятие без последующего покрытия",
+            "duration": "15 мин",
+            "price": {
+              "type": "from",
+              "value": "700 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Френч",
+            "duration": "15 мин",
+            "price": {
+              "type": "from",
+              "value": "500 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          }
+        ]
+      },
+      {
+        "id": "pedicure",
+        "label": "Педикюр",
+        "services": [
+          {
+            "name": "Luxe Shine + Smart педикюр",
+            "duration": "1 ч 15 мин",
+            "price": {
+              "type": "from",
+              "value": "3 800 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Luxe Shine + педикюр пальчики",
+            "duration": "1 ч",
+            "price": {
+              "type": "from",
+              "value": "2 800 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Обработка пальчиков без покрытия",
+            "duration": "1 ч",
+            "price": {
+              "type": "from",
+              "value": "2 000 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Педикюр детский (обработка ногтей)",
+            "duration": "30 мин",
+            "price": {
+              "type": "from",
+              "value": "1 000 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Педикюр комби/аппаратный без покрытия",
+            "duration": "1 ч",
+            "price": {
+              "type": "from",
+              "value": "3 200 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Педикюр комби/аппаратный + гель-лак (всё включено)",
+            "duration": "1 ч 30 мин",
+            "price": {
+              "type": "from",
+              "value": "4 000 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Педикюр комби/аппаратный с покрытием гель-лак (пальчики)",
+            "duration": "1 ч",
+            "price": {
+              "type": "from",
+              "value": "3 000 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Педикюр мужской",
+            "duration": "1 ч",
+            "price": {
+              "type": "from",
+              "value": "3 500 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Снятие гель-лака на ногах без последующего покрытия",
+            "duration": "20 мин",
+            "price": {
+              "type": "from",
+              "value": "500 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          }
+        ]
+      },
+      {
+        "id": "podology",
+        "label": "Подология",
+        "services": [
+          {
+            "name": "Обработка вросшего ногтя",
+            "duration": "1 ч",
+            "price": {
+              "type": "from",
+              "value": "1 500 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Педикюр медицинский",
+            "duration": "1 ч 30 мин",
+            "price": {
+              "type": "from",
+              "value": "3 700 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Протезирование ногтя",
+            "duration": "15 мин",
+            "price": {
+              "type": "from",
+              "value": "1 000 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Удаление мозоли",
+            "duration": "30 мин",
+            "price": {
+              "type": "from",
+              "value": "800 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Установка Лайт системы",
+            "duration": "30 мин",
+            "price": {
+              "type": "from",
+              "value": "3 000 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Установка титановой нити",
+            "duration": "30 мин",
+            "price": {
+              "type": "from",
+              "value": "3 000 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          }
+        ]
+      },
+      {
+        "id": "training",
+        "label": "Обучение",
+        "services": [
+          {
+            "name": "Индивидуальные занятия",
+            "duration": "6 ч",
+            "price": {
+              "type": "from",
+              "value": "18 000 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Курс «Мастер с нуля»",
+            "duration": "12 ч",
+            "price": {
+              "type": "from",
+              "value": "35 000 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Курс по наращиванию ногтей",
+            "duration": "12 ч",
+            "price": {
+              "type": "from",
+              "value": "18 000 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          },
+          {
+            "name": "Курс повышения квалификации",
+            "duration": "12 ч",
+            "price": {
+              "type": "from",
+              "value": "15 000 ₽"
+            },
+            "bookingUrl": "https://mst.link/studiya_krasoty_asnails/services?cid=p3nnavuopi6gfto7gqmed9fpqk"
+          }
+        ]
+      }
+    ]
+  },
+  "promotions": [],
+  "reviews": [
+    {
+      "text": "Тахмина — настоящий профессионал своего дела. Внимательная, аккуратная, быстрая, тактичная.",
+      "author": "Белова Ирина"
+    },
+    {
+      "text": "Хожу на маникюр и педикюр к Тахмине около года. Покрытие держится долго, большая палитра цветов, в студии очень уютно.",
+      "author": "Светлана К."
+    },
+    {
+      "text": "Мой любимый инструктор Тахмина Джабарова. Благодарю за курс «Смарт-педикюр».",
+      "author": "Жусупова А."
+    }
+  ],
+  "amenities": [
+    {
+      "title": "Подология",
+      "text": "Работа со сложными случаями ногтей и стоп"
+    },
+    {
+      "title": "Большая палитра",
+      "text": "Много оттенков и вариантов дизайнов"
+    },
+    {
+      "title": "Обучение мастеров",
+      "text": "Индивидуальные занятия и курсы"
+    }
+  ],
+  "seo": {
+    "title": "Тахмина | A. S. NAILS — маникюр, педикюр и подология",
+    "description": "Маникюр, педикюр и подология у Тахмины в Москве, метро Молодёжная.",
+    "keywords": [
+      "маникюр Молодёжная",
+      "педикюр Молодёжная",
+      "подолог Молодёжная",
+      "Тахмина маникюр",
+      "A. S. NAILS"
+    ],
+    "locale": "ru_RU"
+  },
+  "analytics": {
+    "yandexMetrikaId": "111617452"
+  },
+  "deployment": {}
+}

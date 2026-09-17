@@ -1,0 +1,33 @@
+---
+import Icon from "./Icon.astro";
+import { assetPath, primaryContact, site } from "../lib/site";
+
+const fallbackUrl = site.bookingUrl || primaryContact().url;
+---
+
+{site.promotions.length > 0 && (
+  <section class="section promotions" id="promotions" aria-labelledby="promotions-title">
+    <div class="shell">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Акции</p>
+          <h2 id="promotions-title">Выгодные<br /><em>предложения</em></h2>
+        </div>
+      </div>
+      <div class="promotion-grid">
+        {site.promotions.map((promotion) => (
+          <article class="promotion-card">
+            {promotion.image && <img src={assetPath(promotion.image.src)} alt={promotion.image.alt} width="680" height="540" loading="lazy" />}
+            <div>
+              {promotion.period && <small>{promotion.period}</small>}
+              <h3>{promotion.title}</h3>
+              {promotion.highlight && <strong>{promotion.highlight}</strong>}
+              <p>{promotion.description}</p>
+              <a class="text-link" href={promotion.url || fallbackUrl} target={(promotion.url || fallbackUrl).startsWith("tel:") ? undefined : "_blank"} rel={(promotion.url || fallbackUrl).startsWith("tel:") ? undefined : "noopener"}>Выбрать акцию <Icon name="arrow" size={17} /></a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

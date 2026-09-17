@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import Hero from "../components/Hero.astro";
+import Portfolio from "../components/Portfolio.astro";
+import Services from "../components/Services.astro";
+import Promotions from "../components/Promotions.astro";
+import About from "../components/About.astro";
+import Reviews from "../components/Reviews.astro";
+import Visit from "../components/Visit.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+---
+
+<BaseLayout>
+  <SiteHeader />
+  <main>
+    <Hero />
+    <Portfolio />
+    <Services />
+    <Promotions />
+    <About />
+    <Reviews />
+    <Visit />
+  </main>
+  <SiteFooter />
+</BaseLayout>

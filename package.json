@@ -1,0 +1,29 @@
+{
+  "name": "tanem-site-engine-v2",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "prepare:assets": "node scripts/prepare-assets.mjs",
+    "build": "npm run prepare:assets && npm run validate && astro build && node scripts/postbuild.mjs",
+    "build:nonna": "TANEM_SITE_CONFIG=examples/nonna.json npm run build",
+    "build:tahmina": "TANEM_SITE_CONFIG=examples/tahmina.json npm run build",
+    "build:julia": "TANEM_SITE_CONFIG=examples/julia.json npm run build",
+    "check:examples": "node scripts/check-examples.mjs",
+    "schema": "node scripts/write-schema.mjs",
+    "schema:check": "node scripts/write-schema.mjs --check",
+    "validate": "node scripts/validate-site.mjs",
+    "test": "npm run schema:check && npm run check:examples && npm run build && node --test tests/*.test.mjs",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@fontsource/cormorant-garamond": "5.2.8",
+    "@fontsource/manrope": "5.2.8",
+    "astro": "7.3.2",
+    "zod": "4.1.12"
+  }
+}
